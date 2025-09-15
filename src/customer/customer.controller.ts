@@ -10,6 +10,7 @@ import {
 } from '@nestjs/common';
 import { CustomerService } from './customer.service';
 import { CreateCustomerDto } from './dto/create-customer.dto';
+import { UppercasePipe } from 'src/common/pipes/uppercase/uppercase.pipe';
 
 @Controller('customer')
 export class CustomerController {
@@ -21,7 +22,7 @@ export class CustomerController {
   }
 
   @Post()
-  addCustomer(@Body() createCustomerDto: CreateCustomerDto) {
+  addCustomer(@Body(UppercasePipe) createCustomerDto: CreateCustomerDto) {
     return this.customerService.addCustomer(createCustomerDto);
   }
 }

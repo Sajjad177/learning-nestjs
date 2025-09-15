@@ -1,4 +1,6 @@
 /* eslint-disable prettier/prettier */
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable prettier/prettier */
 import { IsEmail, IsInt, IsString, Max, Min } from 'class-validator';
 
 export class CreateCustomerDto {
@@ -19,3 +21,4 @@ export class CreateCustomerDto {
 // It is used for both type safety + validation.
 
 //* use there validation pipe for validation because it more secure
+//* typescript help us development time and remove runtime that's why we use class validator for validation.
